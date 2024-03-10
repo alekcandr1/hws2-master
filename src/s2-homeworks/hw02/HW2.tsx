@@ -5,10 +5,10 @@ import s2 from '../../s1-main/App.module.css'
 /*
 * 1 -+ описать типы AffairPriorityType, AffairType
 * 2 -+ указать нужный тип для defaultAffairs
-* 3 - дописать типы и логику функции filterAffairs и проверить её тестами
-* 4 - выполнить пункт 3 для функции deleteAffair
-* 5 - указать нужный тип в useState с affairs
-* 6 - дописать тип и логику функции deleteAffairCallback
+* 3 -+ дописать типы и логику функции filterAffairs и проверить её тестами
+* 4 -+ выполнить пункт 3 для функции deleteAffair
+* 5 -+ указать нужный тип в useState с affairs
+* 6 -+ дописать тип и логику функции deleteAffairCallback
 * 7 - в файле Affairs.tsx дописать типизацию пропсов
 * 8 - в файле Affairs.tsx дописать логику функций setAll, setHigh, setMiddle, setLow
 * 9 - в файле Affair.tsx дописать типизацию пропсов
@@ -37,12 +37,14 @@ const defaultAffairs: AffairType[] = [ // need to fix any
 // pure helper functions
 export const filterAffairs = ( affairs: AffairType[], filter: FilterType ): any => { // need to fix any
     return (
-       filter === 'all' ? affairs : affairs.filter(el => el.priority === filter) // need to fix
+        filter === 'all' ? affairs : affairs.filter(el => el.priority === filter) // need to fix
     )
 }
 export const deleteAffair = ( affairs: AffairType[], _id: number ): any => { // need to fix any
-
-    return affairs // need to fix
+    if (_id) {
+        return affairs.filter(el => el._id !== _id)
+    } else return affairs
+    // need to fix
 }
 
 function HW2() {
@@ -51,7 +53,7 @@ function HW2() {
 
     const filteredAffairs = filterAffairs(affairs, filter)
     const deleteAffairCallback = ( _id: number ) => { // need to fix any
-        // need to fix
+        setAffairs(deleteAffair(affairs, _id))// need to fix
     }
 
     return (
