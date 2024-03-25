@@ -3,13 +3,17 @@
 }
 
 .disabled {
-    background-color: #fff;
+    background-color: #ccc;
 }
 
 .secondary {
+    background-color: #41459b;
+
 }
 
 .default {
+    background-color: green;
+
 }
 
 .red {

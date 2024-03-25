@@ -10,7 +10,7 @@ type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElem
     HTMLInputElement>
 
 type SuperCheckboxPropsType = Omit<DefaultInputPropsType, 'type'> & {
-    onChangeChecked?: (checked: boolean) => void
+    onChangeChecked?: ( checked: boolean ) => void
     spanClassName?: string
 }
 
@@ -22,11 +22,11 @@ const SuperCheckbox: React.FC<SuperCheckboxPropsType> = (
         spanClassName,
         children, // в эту переменную попадёт текст, типизировать не нужно так как он затипизирован в React.FC
         id,
-
+        checked,
         ...restProps // все остальные пропсы попадут в объект restProps
     }
 ) => {
-    const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
+    const onChangeCallback = ( e: ChangeEvent<HTMLInputElement> ) => {
         onChangeChecked?.(e.currentTarget.checked)
         // задачка на написание онченджа
 
@@ -36,22 +36,26 @@ const SuperCheckbox: React.FC<SuperCheckboxPropsType> = (
         + (className ? ' ' + className : '')
 
     return (
-        <label className={s.label}>
+        <label className={ s.label }>
             <input
-                id={id}
-                type={'checkbox'}
-                onChange={onChangeCallback}
-                className={finalInputClassName}
-                {...restProps} // отдаём инпуту остальные пропсы если они есть (checked например там внутри)
+                id={ id }
+                type={ 'checkbox' }
+                onChange={ onChangeCallback }
+                className={ finalInputClassName }
+                checked={checked}
+                { ...restProps } // отдаём инпуту остальные пропсы если они есть (checked например там внутри)
             />
-            {children && (
-                <span
-                    id={id ? id + '-span' : undefined}
-                    className={s.spanClassName}
-                >
-                    {children}
+            {
+                children && (
+                    <span
+                        id={ id ? id + '-span' : undefined }
+                        className={ s.spanClassName }
+                        onClick={ () => onChangeChecked?.(!checked) }
+
+                    >
+                    { children }
                 </span>
-            )}
+                ) }
         </label> // благодаря label нажатие на спан передастся в инпут
     )
 }
