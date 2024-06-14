@@ -42,3 +42,40 @@
 
 .button:disabled {
 }
+
+
+.button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.button:hover {
+    opacity: 0.9;
+}
+
+.default {
+    background-color: #4caf50;
+    color: white;
+}
+
+.red {
+    background-color: #f44336;
+    color: white;
+}
+
+.secondary {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.disabled {
+    background-color: #bdbdbd;
+    color: #757575;
+    cursor: not-allowed;
+}

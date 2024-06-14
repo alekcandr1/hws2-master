@@ -1,23 +1,51 @@
-.item {
-}
-
-.item:last-of-type {
-}
-
-.users {
+.container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .buttonsContainer {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
 }
 
-.container {
+.users {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .thead {
+    background-color: #4caf50;
+    color: white;
+    text-align: left;
+    font-size: 18px;
+    font-weight: bold;
 }
 
-.nameCol {
+.nameCol, .ageCol {
+    padding: 12px 15px;
 }
 
-.ageCol {
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #ddd;
+}
+
+.item {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.item:last-of-type {
+    border-bottom: none;
 }
