@@ -1,14 +1,48 @@
 .buttonsContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.buttonsContainer button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    user-select: none;
+    transition: opacity 0.3s;
+}
+
+.buttonsContainer button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 .clock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
 }
 
 .watch {
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .watch strong {
+    font-size: 36px;
 }
 
 .more {
+    font-size: 20px;
+    color: #808080; /* Gray */
+    margin-top: 10px;
 }
