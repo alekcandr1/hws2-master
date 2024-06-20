@@ -1,2 +1,59 @@
 .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    background-color: #fff;
+}
+
+.select:focus {
+    border-color: #4caf50;
+    background-color: #f0fff4;
+}
+
+.option {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.label:last-of-type {
+    margin-bottom: 0;
+}
+
+.label input[type='radio'] {
+    margin-right: 10px;
+    padding: 5px; /* Добавлен отступ у input */
+}
+
+.span {
+    font-size: 16px;
+    color: #333;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }

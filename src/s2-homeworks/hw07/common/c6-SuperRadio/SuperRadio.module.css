@@ -1,15 +1,46 @@
 .radio {
-}
-
-.radio::before {
-}
-
-
-.radio:checked::before {
+    margin-right: 10px;
+    accent-color: #4caf50;
 }
 
 .label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.label:last-of-type {
+    margin-bottom: 0;
+}
+
+.span {
+    font-size: 16px;
+    color: #333;
 }
 
 .options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+.button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
 }
