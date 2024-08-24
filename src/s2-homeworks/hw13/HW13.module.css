@@ -1,22 +1,76 @@
-.buttonsContainer {
+.hwTitle {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
+.buttonsContainer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.buttonsContainer button {
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttonsContainer button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
 .responseContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+
+    /*margin: 0 auto;*/
 }
 
 .imageContainer {
+    margin-bottom: 20px;
 }
 
 .image {
+    max-width: 100%;
+    height: auto;
 }
 
-.textContainer{
+.textContainer {
+    text-align: left;
+    max-width: 400px;
+    padding-left: 20px;
 }
 
 .code {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 10px;
 }
 
 .text {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: 500;
+
 }
+
 .info {
+    font-size: 14px;
+    color: gray;
 }
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+/*.image {*/
+/*    width: 50%;*/
+/*    height: auto;*/
+/*    margin: 0 auto;*/
+/*}*/
