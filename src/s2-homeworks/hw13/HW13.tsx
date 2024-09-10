@@ -38,8 +38,8 @@ const HW13 = () => {
                 setCode('Код 200!')
                 setImage(success200)
                 // дописать
-                setText(res.data.errorText + '\n' + res.data.info)
-                setInfo('')
+                setText('...всё ок)')
+                setInfo('код 200 - обычно означает что скорее всего всё ок)')
 
             })
             .catch(( e ) => {
@@ -53,26 +53,26 @@ const HW13 = () => {
                     if (status === 500) {
                         setImage(error500)
                         setCode('Ошибка 500!')
-                        setText(e.response.data.errorText + '\n' + e.response.data.info)
-                        setInfo('')
+                        setText('эмитация ошибки на сервере')
+                        setInfo('ошибка 500 - обычно означает что что-то сломалось на сервере, например база данных)')
+
                     } else if (status === 400) {
                         setImage(error400)
                         setCode('Ошибка 400!')
-                        setText(e.response.data.errorText + '\n' + e.response.data.info)
-                        setInfo('')
+                        setText('Ты не отправил success в body вообще!')
+                        setInfo('ошибка 400 - обычно означает что скорее всего фронт отправил что-то не то на бэк!')
                     } else {
                         console.log(e)
                         setImage(errorUnknown)
-                        setCode(e.message)
+                        setCode('Error')
                         setText(e.name)
-                        setInfo('')
+                        setInfo('Error')
                     }
                 } else {
                     setImage(errorUnknown)
-                    setCode('Error!')
-                    setText(e.name)
-                    setInfo('')
-
+                    setCode('Error')
+                    setText(e.response.error)
+                    setInfo(e.message)
                 }
 
             })
@@ -93,6 +93,7 @@ const HW13 = () => {
                         xType={ 'secondary' }
                         // дописать
                         disabled={isLoading}
+                        className={s.secondary}
                     >
                         Send true
                     </SuperButton>
@@ -102,7 +103,7 @@ const HW13 = () => {
                         xType={ 'secondary' }
                         // дописать
                         disabled={isLoading}
-
+                        className={s.secondary}
                     >
                         Send false
                     </SuperButton>
@@ -112,7 +113,7 @@ const HW13 = () => {
                         xType={ 'secondary' }
                         // дописать
                         disabled={isLoading}
-
+                        className={s.secondary}
                     >
                         Send undefined
                     </SuperButton>
@@ -122,7 +123,7 @@ const HW13 = () => {
                         xType={ 'secondary' }
                         // дописать
                         disabled={isLoading}
-
+                        className={s.secondary}
                     >
                         Send null
                     </SuperButton>

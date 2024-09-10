@@ -11,10 +11,10 @@
     margin-bottom: 20px;
 }
 .buttonsContainer button {
-    text-transform: uppercase;
     font-weight: bold;
     padding: 10px 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #0665c4;
+    color: #0665c4;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -29,8 +29,6 @@
     align-items: center;
     justify-content: center;
     padding-top: 50px;
-
-    /*margin: 0 auto;*/
 }
 
 .imageContainer {
@@ -69,8 +67,6 @@ button:disabled {
     opacity: 0.6;
     cursor: not-allowed;
 }
-/*.image {*/
-/*    width: 50%;*/
-/*    height: auto;*/
-/*    margin: 0 auto;*/
-/*}*/
+.secondary {
+    background-color: #fff;
+}
